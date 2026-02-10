@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import './globals.css';
 
 export const metadata = {
   title: 'CalmSpace',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body
