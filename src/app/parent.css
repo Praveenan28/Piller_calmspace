@@ -1,0 +1,57 @@
+/* Fade-in animation */
+.fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover lift for glass cards */
+.glassHover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glassHover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+/* Gentle shimmer */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: shimmerMove 3.5s infinite;
+}
+
+@keyframes shimmerMove {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
